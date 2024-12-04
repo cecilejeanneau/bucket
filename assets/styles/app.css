@@ -1,3 +1,30 @@
 body {
     background-color: skyblue;
 }
+
+main {
+    height: 100vh;
+}
+
+/*************************** Module 6 Flash *******************************/
+
+.flash {
+    padding: 20px;
+    font-weight: bold;
+    font-size: 1.4rem;
+    margin: 1rem 0;
+    border-radius: 5px;
+    color: #132135;
+}
+
+.flash-success {
+    background-color: lightgreen;
+}
+
+.flash-error {
+    background-color: red
+}
+
+.error > ul > li {
+    color: indianred;
+}

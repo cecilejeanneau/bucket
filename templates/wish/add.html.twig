@@ -1,0 +1,17 @@
+{% extends 'base.html.twig' %}
+
+{% form_theme wishForm 'views/form-theme.html.twig' %}
+
+{% block title %}
+    {{ parent() }} | Add a Wish
+{% endblock %}
+
+{% block body %}
+    {% block formTitle %}
+        Add a Wish !
+    {% endblock %}
+    {% include 'views/wish-form.html.twig' %}
+    {% block formButtonLabel %}
+        Create a Wish !!
+    {% endblock %}
+{% endblock %}

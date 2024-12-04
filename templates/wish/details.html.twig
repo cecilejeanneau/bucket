@@ -1,0 +1,20 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Wish details of {{ wish.title}} !</h1>
+
+    <article>
+        <h3>{{ wish.title }}</h3>
+        <p>Créé par {{ wish.user.username }}, le {{ wish.dateCreated | date('d/m/Y') }}</p>
+        <p>{{ wish.description | nl2br }}</p>
+        <button class="flash-error"><a href="{{ path('wishes_delete', {'id': wish.id}) }}">Delete</a></button>
+        <button class="flash-error">
+            <a href="{{ path('wishes_update', {'id': wish.id}) }}">Update</a>
+        </button>
+    </article>
+{% endblock %}
+
+{% block title %}
+    {{ wish.title }} idea
+{% endblock %}
+
