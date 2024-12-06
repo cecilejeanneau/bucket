@@ -1,0 +1,28 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Events{% endblock %}
+
+{% block body %}
+    <h1>Upcoming Events</h1>
+
+    {{ form(searchEventForm) }}
+
+    {% if events is not empty %}
+        <ul>
+            {% for event in events %}
+                <li>
+                    <h2>{{ event.fields.title_fr }}</h2>
+                    <p><strong>Date:</strong> {{ event.fields.daterange_fr }}</p>
+                    <p><strong>Location:</strong> {{ event.fields.location_name }} | {{ event.fields.location_address }}</p>
+                    <p>{{ event.fields.description_fr }}</p>
+                    {% if event.fields.thumbnail is defined %}
+                        <a href="{{ event.fields.canonicalurl }}"><img src="{{ event.fields.thumbnail }}" alt="{{ event.fields.title_fr }}" /></a>
+                    {% endif %}
+{#                    <p><a href="{{ event.fields.canonicalurl }}" target="_blank">More info</a></p>#}
+                </li>
+            {% endfor %}
+        </ul>
+    {% else %}
+        <p>No events found for the selected date and city.</p>
+    {% endif %}
+{% endblock %}
